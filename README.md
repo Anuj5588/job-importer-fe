@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Overview
 
-## Getting Started
+The **Job Importer Frontend** is part of a full-stack system designed to support a **scalable job import pipeline with queue-based background processing and import history tracking**.
 
-First, run the development server:
+This application serves as an **admin UI** built with **Next.js**, allowing users to monitor and visualize job import operations executed by the backend system. The backend fetches job data from multiple external job feed APIs (XML format), processes them asynchronously using **Redis + BullMQ**, and stores the results in **MongoDB** using efficient upsert logic.
 
-```bash
+The frontend focuses on presenting **import history and statistics**, including:
+- Total jobs fetched per import run  
+- Number of new jobs created  
+- Number of jobs updated  
+- Number of failed records with error reasons  
+
+## Folder Structure
+
+job-importer-fe/
+├─ app/ # Next.js App Router directory
+├─ public/ # Static assets
+├─ styles/ # Global styles
+├─ .gitignore
+├─ next.config.mjs
+├─ package.json
+└─ README.md
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- **Node.js** (v20 or newer)  
+- **npm** (v9 or newer)  
+- **Docker** (optional, only if using Docker)  
+
+## 1. Clone the repository
+
+git clone https://github.com/Anuj5588/job-importer-fe.git
+cd job-importer-fe
+
+## 2.Install dependencies
+npm install
+
+## 3.Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 4. Builds the app for production
+npm run build
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 5.Starts the production server
+ npm start
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

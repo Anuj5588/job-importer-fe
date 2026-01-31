@@ -17,9 +17,9 @@ export default function ImportHistory() {
   };
 
   return (
-    <main>
-      <h1>Import History</h1>
+    <div className="text-center px-8 ">
+      <h1 className="text-3xl text-gray-600 font-bold mt-8">Import History</h1>
       <ImportTable logs={logs} />
-    </main>
+    </div>
   );
 }

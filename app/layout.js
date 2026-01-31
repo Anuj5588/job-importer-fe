@@ -1,3 +1,5 @@
+import "./globals.css";
+
 export const metadata = {
   title: "Job Importer Admin",
   description: "Admin panel for job import system",
